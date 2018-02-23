@@ -1,0 +1,7 @@
+C:\dev\RSA_Server\RSA_Server\bin\Debug\RSA_Server.exe.config
+C:\dev\RSA_Server\RSA_Server\bin\Debug\RSA_Server.exe
+C:\dev\RSA_Server\RSA_Server\bin\Debug\RSA_Server.pdb
+C:\dev\RSA_Server\RSA_Server\obj\Debug\RSA_Server.csprojResolveAssemblyReference.cache
+C:\dev\RSA_Server\RSA_Server\obj\Debug\RSA_Server.csproj.CoreCompileInputs.cache
+C:\dev\RSA_Server\RSA_Server\obj\Debug\RSA_Server.exe
+C:\dev\RSA_Server\RSA_Server\obj\Debug\RSA_Server.pdb
