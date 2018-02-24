@@ -5,3 +5,10 @@ C:\dev\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
 C:\dev\Client\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
 C:\dev\Client\Client\obj\Debug\Client.exe
 C:\dev\Client\Client\obj\Debug\Client.pdb
+C:\Users\Babak\Source\Repos\RSA_Server_Client\Client\bin\Debug\Client.exe.config
+C:\Users\Babak\Source\Repos\RSA_Server_Client\Client\bin\Debug\Client.exe
+C:\Users\Babak\Source\Repos\RSA_Server_Client\Client\bin\Debug\Client.pdb
+C:\Users\Babak\Source\Repos\RSA_Server_Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Babak\Source\Repos\RSA_Server_Client\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Babak\Source\Repos\RSA_Server_Client\Client\obj\Debug\Client.exe
+C:\Users\Babak\Source\Repos\RSA_Server_Client\Client\obj\Debug\Client.pdb

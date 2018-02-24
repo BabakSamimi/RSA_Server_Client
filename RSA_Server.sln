@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA_Server", "RSA_Server\RSA_Server.csproj", "{013539A6-69CF-4856-8AF9-A0FE43AEED05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client\Client.csproj", "{681396BC-2B4D-4134-8971-34E8AA4E7880}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{681396BC-2B4D-4134-8971-34E8AA4E7880}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

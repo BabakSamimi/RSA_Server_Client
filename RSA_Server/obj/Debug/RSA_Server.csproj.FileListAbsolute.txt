@@ -5,3 +5,10 @@ C:\dev\RSA_Server\RSA_Server\obj\Debug\RSA_Server.csprojResolveAssemblyReference
 C:\dev\RSA_Server\RSA_Server\obj\Debug\RSA_Server.csproj.CoreCompileInputs.cache
 C:\dev\RSA_Server\RSA_Server\obj\Debug\RSA_Server.exe
 C:\dev\RSA_Server\RSA_Server\obj\Debug\RSA_Server.pdb
+C:\Users\Babak\Source\Repos\RSA_Server_Client\RSA_Server\bin\Debug\RSA_Server.exe.config
+C:\Users\Babak\Source\Repos\RSA_Server_Client\RSA_Server\bin\Debug\RSA_Server.exe
+C:\Users\Babak\Source\Repos\RSA_Server_Client\RSA_Server\bin\Debug\RSA_Server.pdb
+C:\Users\Babak\Source\Repos\RSA_Server_Client\RSA_Server\obj\Debug\RSA_Server.csprojResolveAssemblyReference.cache
+C:\Users\Babak\Source\Repos\RSA_Server_Client\RSA_Server\obj\Debug\RSA_Server.csproj.CoreCompileInputs.cache
+C:\Users\Babak\Source\Repos\RSA_Server_Client\RSA_Server\obj\Debug\RSA_Server.exe
+C:\Users\Babak\Source\Repos\RSA_Server_Client\RSA_Server\obj\Debug\RSA_Server.pdb

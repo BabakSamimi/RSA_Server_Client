@@ -53,26 +53,24 @@ namespace Client
                 tcpStream = tcpClient.GetStream(); // Attach stream object
                 buffer = new byte[128];
 
-                Console.WriteLine(rsa.n);
+                Console.WriteLine(rsa.n + "\n");
 
                 msgLength = tcpStream.Read(buffer, 0, buffer.Length); // Await server's modulus key
                 serverModulusKey = new BigInteger(buffer);
                 buffer.Clear();
 
                 byte[] b1 = new byte[64], b2 = new byte[64];
-
-                byte[] half = rsa.n.ToByteArray();
+                byte[] fresh = new byte[128];
+                fresh = rsa.Encrypt(rsa.n.ToByteArray(), serverModulusKey); // Encrypts the key
 
                 for (int i = 0; i < 64; ++i)
                 {
-                    b1[i] = half[i];
-                    b2[i] = half[64 + i + 1];
-
+                    b1[i] = fresh[i];
+                    b2[i] = fresh[64 + i];
                 }
 
-                b1 = rsa.Encrypt(b1, serverModulusKey); // Encrypts the clients public key WITH server's public encryption key
-                b2 = rsa.Encrypt(b2, serverModulusKey);
                 tcpStream.Write(b1, 0, b1.Length); // Sending clients public key
+                Thread.Sleep(500);
                 tcpStream.Write(b2, 0, b2.Length);
 
                 Console.WriteLine("Key: " + serverModulusKey);
@@ -82,14 +80,16 @@ namespace Client
                 {
                     msg = "";
                     buffer.Clear();
+                    fresh.Clear();
+
                     Console.WriteLine("Send message: ");
 
                     msg = Console.ReadLine();
 
                     if (msg.Equals("quit")) break;
 
-                    byte[] temp = Encoding.UTF8.GetBytes(msg);
-                    buffer = rsa.Encrypt(temp, serverModulusKey); // message is now encrypted
+                    fresh = Encoding.UTF8.GetBytes(msg);
+                    buffer = rsa.Encrypt(fresh, serverModulusKey); // message is now encrypted
                     tcpStream.Write(buffer, 0, buffer.Length);
                 }
 

@@ -44,12 +44,12 @@ namespace RSA_Server
                         msgLength = socket.Receive(buffer);
                         plaintext = "";
                         
-                        data = rsa.Decrypt(buffer, clientss.GetPublicKey(socket)); // Decrypt clients message into plaintext
-                        //plaintext = Encoding.UTF8.GetString(data);
-                        for (int i = 0; i < msgLength; ++i) // Convert bytes into chars
+                        data  = rsa.Decrypt(buffer, rsa.n); // Decrypt clients message into plaintext
+                        plaintext = Encoding.UTF8.GetString(data);
+                        /*for (int i = 0; i < msgLength; ++i) // Convert bytes into chars
                         {
                             plaintext += Convert.ToChar(data[i]);
-                        }
+                        }*/
 
                         Console.WriteLine("Message from client: " + plaintext);
 
@@ -108,20 +108,25 @@ namespace RSA_Server
             {
                 try
                 {
+                    byte[] firstHalf = new byte[64];
+                    byte[] secondHalf = new byte[64];
+
                     socket = tcpListener.AcceptSocket();
                     socket.Send(rsa.n.ToByteArray()); // Send public key to client.
-                    byte[] half = new byte[64];
 
-                    socket.Receive(buffer); // Wait for clients public key in an encrypted format - 64x2
-                    socket.Receive(half);
-                    byte[] realData = new byte[128];
+
+                    socket.Receive(firstHalf); // Wait for clients public key in an encrypted format - 64x2
+                    socket.Receive(secondHalf);
+
                     for(int i = 0; i < 64; ++i)
                     {
-                        realData[i] = buffer[i];
-                        realData[64 + i + 1] = half[i];
+                        buffer[i] = firstHalf[i];
+                        buffer[64 + i] = secondHalf[i];
                     }
-                    buffer = rsa.Decrypt(realData, rsa.n); // Decrypt, this byte-array contains clients public key.
-                    BigInteger temp = new BigInteger(buffer); // Holds the public key
+
+                    byte[] realData = rsa.Decrypt(buffer, rsa.n); // Decrypt, this byte-array contains clients public key.
+                    BigInteger temp = new BigInteger(realData); // Holds the public key
+
 
                     clientss.Add(socket, temp);
                     HandleClient(socket, rsa); // Handle the communication with the client on another thread
