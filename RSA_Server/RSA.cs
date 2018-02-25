@@ -25,7 +25,6 @@ namespace RSA_Server
         private int bits;
         private int bytes;
         private byte[] randomValues;
-        private bool processIsDone;
 
         private void GeneratePrimes()
         {

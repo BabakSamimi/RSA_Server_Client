@@ -33,13 +33,13 @@ namespace RSA_Server
             }
         }*/
 
-        public static BigInteger GetPublicKey(this Dictionary<Socket, BigInteger> clientss, Socket socket)
+        public static BigInteger GetPublicKey(this Dictionary<Socket, BigInteger> clients, Socket s)
         {
             BigInteger temp = new BigInteger();
             
-            foreach (KeyValuePair<Socket, BigInteger> client in clientss) // Gets the public key/modulus 
+            foreach (KeyValuePair<Socket, BigInteger> client in clients) // Gets the public key/modulus 
             {
-                if (socket.Equals(client.Key))
+                if (s.Equals(client.Key))
                 {
                     temp = client.Value;
                     break;
