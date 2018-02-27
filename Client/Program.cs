@@ -42,6 +42,8 @@ namespace Client
                     rsaAsync.Join();
                 }
 
+                Console.WriteLine("Pkey: " + rsa.n);
+
                 Console.WriteLine("Connecting...");
 
                 client = new Client(address, port, rsa);
@@ -53,7 +55,7 @@ namespace Client
                     Console.WriteLine("Send a message to the server: ");
                     msg = Console.ReadLine();
 
-                    if (msg.ToLower().Equals("quit"))
+                    if (msg.ToLower().Equals("disconnect"))
                     {
                         Console.WriteLine("Disconnecting from the server...");
                         client.Disconnect();

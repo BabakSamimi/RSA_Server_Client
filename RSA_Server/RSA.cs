@@ -46,8 +46,6 @@ namespace RSA_Server
                 p = ReturnPositive(p, randomValues);
             } while (!FermatTest(p, 100));
 
-            processIsDone = true;
-
         }
 
         private BigInteger ReturnPositive(BigInteger temp, byte[] v)
